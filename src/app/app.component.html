@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Search</h1>
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Type a keyword..." />
+  <p>{{ filteredArticles.length }} posts were found.</p>
+
+  <div *ngFor="let article of filteredArticles" class="post">
+    <h2 [innerHTML]="highlight(article.title)"></h2>
+    <em>{{ article.date }}</em>
+    <p [innerHTML]="highlight(article.content)"></p>
+  </div>
+</div>
